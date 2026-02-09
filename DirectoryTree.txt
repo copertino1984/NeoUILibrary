@@ -1,0 +1,11 @@
+Directory Tree per: C:\Users\coper\AndroidStudioProjects\NeoUILibrary
+==================================================
+
+📁 NeoUILibrary
+   ├─ gradlew
+   ├─ gradlew.bat
+   ├─ .gitignore
+   ├─ build.gradle.kts
+   ├─ settings.gradle.kts
+   ├─ gradle.properties
+   ├─ local.properties
