@@ -172,4 +172,51 @@ object NeoDefaults {
             return 32.dp * config.scaleFactor
         }
     }
+
+    object Switch {
+        @Composable
+        fun trackWidth(size: NeoSize = NeoSize.MEDIUM): Dp {
+            val config = rememberDeviceConfig()
+            val base = when (size) {
+                NeoSize.SMALL -> 80.dp
+                NeoSize.MEDIUM -> 120.dp
+                NeoSize.LARGE -> 160.dp
+            }
+            return base * config.scaleFactor
+        }
+
+        @Composable
+        fun trackHeight(size: NeoSize = NeoSize.MEDIUM): Dp {
+            val config = rememberDeviceConfig()
+            val base = when (size) {
+                NeoSize.SMALL -> 40.dp
+                NeoSize.MEDIUM -> 52.dp
+                NeoSize.LARGE -> 68.dp
+            }
+            return base * config.scaleFactor
+        }
+
+        @Composable
+        fun thumbSize(size: NeoSize = NeoSize.MEDIUM): Dp {
+            val config = rememberDeviceConfig()
+            val base = when (size) {
+                NeoSize.SMALL -> 32.dp
+                NeoSize.MEDIUM -> 44.dp
+                NeoSize.LARGE -> 60.dp
+            }
+            return base * config.scaleFactor
+        }
+
+        @Composable
+        fun cornerRadius(size: NeoSize = NeoSize.MEDIUM): Dp {
+            return trackHeight(size) / 2f
+        }
+
+        @Composable
+        fun elevation(): Dp {
+            val config = rememberDeviceConfig()
+            return 8.dp * config.scaleFactor
+        }
+    }
+
 }

@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.cgsoftware.neoui.ui.components.audio.*
 import com.cgsoftware.neoui.ui.components.button.NeumorphicButton
+import com.cgsoftware.neoui.ui.components.button.NeoSwitch
 import com.cgsoftware.neoui.ui.components.common.UiState
 import com.cgsoftware.neoui.ui.components.led.LedConfig
 import com.cgsoftware.neoui.ui.components.led.LedStyle
@@ -30,6 +31,12 @@ fun NeoUITestScreen() {
     var progress by remember { mutableFloatStateOf(0.4f) }
     var buttonState by remember { mutableStateOf(UiState.IDLE) }
 
+    // SWITCH STATES
+    var switchBypass by remember { mutableStateOf(false) }
+    var switchMute by remember { mutableStateOf(true) }
+    var switchPhantom by remember { mutableStateOf(false) }
+    var switchMono by remember { mutableStateOf(true) }
+
     // CONTROLLI TEMA
     var isDarkTheme by remember { mutableStateOf(true) }
     var accentHue by remember { mutableFloatStateOf(0.5f) } // 0-1 per HSL
@@ -43,7 +50,7 @@ fun NeoUITestScreen() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(NeoTheme.colors.background)  // <-- AGGIUNGI BACKGROUND
+                .background(NeoTheme.colors.background)
         ) {
             Column(
                 modifier = Modifier
@@ -99,13 +106,107 @@ fun NeoUITestScreen() {
                                 onValueChange = { accentHue = it },
                                 componentSize = NeoSize.MEDIUM,
 
-                            )
+                                )
                             Spacer(modifier = Modifier.height(8.dp))
                             Text(
                                 "Hue: ${(accentHue * 360).toInt()}°",
                                 color = textColor,
                                 fontSize = 12.sp
                             )
+                        }
+                    }
+                }
+
+                // ===== SWITCHES SECTION =====
+                NeumorphicPanel(
+                    componentSize = NeoSize.MEDIUM,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        Text("SWITCHES", color = textColor, fontSize = 18.sp)
+
+                        // Row 1: Sizes
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(24.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                NeoSwitch(
+                                    checked = switchBypass,
+                                    onCheckedChange = { switchBypass = it },
+                                    componentSize = NeoSize.SMALL,
+
+                                    uiState = UiState.IDLE
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text("BYPASS", color = textColor, fontSize = 12.sp)
+                                Text("Small", color = textColor.copy(alpha = 0.6f), fontSize = 10.sp)
+                            }
+
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                NeoSwitch(
+                                    checked = switchMute,
+                                    onCheckedChange = { switchMute = it },
+                                    componentSize = NeoSize.MEDIUM,
+
+                                    uiState = if (switchMute) UiState.ALERT else UiState.IDLE
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text("MUTE", color = textColor, fontSize = 12.sp)
+                                Text("Medium", color = textColor.copy(alpha = 0.6f), fontSize = 10.sp)
+                            }
+                        }
+
+                        // Row 2: States
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(24.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                NeoSwitch(
+                                    checked = switchPhantom,
+                                    onCheckedChange = { switchPhantom = it },
+                                    componentSize = NeoSize.LARGE,
+
+                                    uiState = UiState.ACTIVE,
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text("PHANTOM +48V", color = textColor, fontSize = 12.sp)
+                                Text("Large / Active", color = textColor.copy(alpha = 0.6f), fontSize = 10.sp)
+                            }
+                        }
+
+                        // Row 3: Animated states
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(24.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                NeoSwitch(
+                                    checked = switchMono,
+                                    onCheckedChange = { switchMono = it },
+                                    componentSize = NeoSize.MEDIUM,
+                                    uiState = UiState.CONNECTING,
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text("MONO", color = textColor, fontSize = 12.sp)
+                                Text("Connecting / Segmented", color = textColor.copy(alpha = 0.6f), fontSize = 10.sp)
+                            }
+
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                NeoSwitch(
+                                    checked = true,
+                                    onCheckedChange = { },
+                                    componentSize = NeoSize.MEDIUM,
+                                    uiState = UiState.DISABLED
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text("DISABLED", color = textColor, fontSize = 12.sp)
+                                Text("Locked ON", color = textColor.copy(alpha = 0.6f), fontSize = 10.sp)
+                            }
                         }
                     }
                 }
